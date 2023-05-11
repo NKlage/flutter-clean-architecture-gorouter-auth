@@ -11,7 +11,7 @@ class AuthRoutes implements ApplicationRoutes {
         GoRoute(
           path: '/login',
           builder: (BuildContext context, GoRouterState state) {
-            return const LoginPage();
+            return LoginPage();
           },
         ),
       ];

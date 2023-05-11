@@ -11,7 +11,8 @@ class AuthRepositoryImpl implements AuthRepository {
   /// Constructor
   AuthRepositoryImpl({required this.appwriteProject});
 
-  // Note: Use auth.datasource.dart instead AppwriteProject Object
+  // Note: In the real world, the datasource objects should be used instead of
+  // direct access to the appwrite resources.
   /// Appwrite Project Configurations and Service
   final AppwriteProject appwriteProject;
 
@@ -33,6 +34,7 @@ class AuthRepositoryImpl implements AuthRepository {
     } catch (e) {
       if (null != _currentUser) {
         _currentUser = null;
+        _currentSession = null;
         _userStreamController.add(_currentUser);
       }
     }
@@ -54,6 +56,8 @@ class AuthRepositoryImpl implements AuthRepository {
         password: password,
       );
     } catch (e) {
+      _currentSession = null;
+      _currentUser = null;
       debugPrint(e.toString());
     }
     await isUserAuthenticated();

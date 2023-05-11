@@ -6,8 +6,10 @@ import '../shared.dart';
 /// Login Page to authenticate User in Application
 class LoginPage extends ConsumerWidget {
   /// Constructor
-  const LoginPage({super.key});
+  LoginPage({super.key});
 
+  final TextEditingController _emailTextController = TextEditingController();
+  final TextEditingController _passwordTextController = TextEditingController();
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
@@ -17,6 +19,21 @@ class LoginPage extends ConsumerWidget {
           const Center(
             child: Text('Login Page'),
           ),
+          Form(
+            child: Column(
+              children: [
+                TextFormField(
+                  controller: _emailTextController,
+                  decoration: const InputDecoration(hintText: 'eMail'),
+                ),
+                TextFormField(
+                  controller: _passwordTextController,
+                  decoration: const InputDecoration(hintText: 'Password'),
+                  obscureText: true,
+                ),
+              ],
+            ),
+          ),
           const SizedBox(
             height: 16,
           ),
@@ -25,8 +42,8 @@ class LoginPage extends ConsumerWidget {
               await ref
                   .read(AuthProviders.authRepository)
                   .loginWithEmailAndPassword(
-                    email: 'test@user.dev',
-                    password: 'Start-1234',
+                    email: _emailTextController.text,
+                    password: _passwordTextController.text,
                   );
             },
             child: const Text('Anmelden'),

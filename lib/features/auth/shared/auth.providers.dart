@@ -25,6 +25,11 @@ class AuthProviders {
     ),
   );
 
+  /// Auth Redirection Service
+  static final Provider<AuthRedirectionService> authRedirectService = Provider(
+    (ref) => AuthRedirectionService(authRepository: ref.read(authRepository)),
+  );
+
   // Presentation
 
   // Shared

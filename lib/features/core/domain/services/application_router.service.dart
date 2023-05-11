@@ -28,6 +28,14 @@ class ApplicationRouterService {
     addRoutes(routes: routeConfiguration.routes());
   }
 
+  /// Add a List of Route Configurations
+  void addRouteConfigurations(
+      {required List<ApplicationRoutes> routeConfigurations}) {
+    for (var routeConfig in routeConfigurations) {
+      addRoutes(routes: routeConfig.routes());
+    }
+  }
+
   /// set router refresh listenable
   // ignore: use_setters_to_change_properties
   void setRefreshListenable(Listenable? listenable) =>

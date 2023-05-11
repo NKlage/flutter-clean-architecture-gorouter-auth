@@ -11,16 +11,24 @@ class DashboardPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: Column(
-        children: [
-          const Text('Protected  Dashboard'),
-          ElevatedButton(
-            onPressed: () async {
-              await ref.read(AuthProviders.authRepository).signOut();
-            },
-            child: const Text('Logout'),
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8),
+              child: Text('Protected  Dashboard'),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                await ref
+                    .read(AuthProviders.authRepository)
+                    .signOut(allSessions: true);
+              },
+              child: const Text('Logout'),
+            ),
+          ],
+        ),
       ),
     );
   }
