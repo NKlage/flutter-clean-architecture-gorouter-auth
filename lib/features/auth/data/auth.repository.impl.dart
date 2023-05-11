@@ -58,31 +58,29 @@ class AuthRepositoryImpl implements AuthRepository {
     } catch (e) {
       _currentSession = null;
       _currentUser = null;
-      debugPrint(e.toString());
     }
     await isUserAuthenticated();
   }
 
   @override
   Future<void> signOut({bool allSessions = false}) async {
-    dynamic result;
+    dynamic result; // validate the result in a real world project
     try {
       if (allSessions) {
         result = await appwriteProject.account.deleteSessions();
       } else {
-        final sessionId = _currentSession?.$id ?? 'default';
+        final sessionId = _currentSession?.$id ?? 'current';
         result =
             await appwriteProject.account.deleteSession(sessionId: sessionId);
       }
-      _currentUser = null;
-      _currentSession = null;
-      _userStreamController.add(null);
-      debugPrint('Delete Session Result: $result');
     } catch (e) {
-      _currentUser = null;
-      _currentSession = null;
-      _userStreamController.add(null);
+      debugPrint(e.toString());
     }
+
+    // add logic for secure logout
+    _currentUser = null;
+    _currentSession = null;
+    _userStreamController.add(null);
   }
 
   @override

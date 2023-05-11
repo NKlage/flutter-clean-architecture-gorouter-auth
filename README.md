@@ -1,4 +1,4 @@
-# Flutter navigation with riverpod, go_router and clean architecture
+# Flutter authorization and navigation with riverpod, go_router and clean architecture
 
 In my projects I like to use the clean code approach with Riverpod, GoRouter and Appwrite *fancyshit. 
 This provides for implementing a feature for each expertise. With a view to routing and user authentication, 
