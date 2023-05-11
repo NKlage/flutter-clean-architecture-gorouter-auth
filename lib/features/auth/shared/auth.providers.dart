@@ -6,7 +6,6 @@ import '../../core/shared.dart';
 import '../data.dart';
 import '../domain.dart';
 import '../shared.dart';
-import 'auth_state_notifier.dart';
 
 /// Riverpod Providers from the Auth Feature
 class AuthProviders {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../shared.dart';
+import '../shared/auth.providers.dart';
 
 /// Login Page to authenticate User in Application
 class LoginPage extends ConsumerWidget {

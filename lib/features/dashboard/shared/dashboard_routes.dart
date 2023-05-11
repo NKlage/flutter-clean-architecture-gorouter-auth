@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../core/domain/models/application_routes.dart';
+import '../../core/domain.dart' show ApplicationRoutes;
 import '../presentation.dart';
 
 /// Routes for the auth Feature

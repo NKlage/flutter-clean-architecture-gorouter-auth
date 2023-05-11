@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../domain.dart';
+import '../domain/services/application_router.service.dart';
 import 'appwrite_project.dart';
 
 /// Riverpod Providers from the Core Feature

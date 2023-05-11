@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../auth/shared.dart';
+import '../../auth/shared.dart' show AuthProviders;
 
 /// Dashboard Page
 class DashboardPage extends ConsumerWidget {

@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 
-import '../domain.dart';
+import 'auth.repository.dart';
 
 /// Redirection depending on whether the user is logged in or not
 class AuthRedirectionService {

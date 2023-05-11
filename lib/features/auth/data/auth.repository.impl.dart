@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:appwrite/models.dart';
 import 'package:flutter/foundation.dart';
 
-import '../../core/shared.dart';
+import '../../core/shared/appwrite_project.dart';
 import '../domain/auth.repository.dart';
 
 /// Auth Repository implementation, implements [AuthRepository]

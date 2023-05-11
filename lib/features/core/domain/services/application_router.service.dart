@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../domain.dart';
+import '../models/application_routes.dart';
 
 /// Application routing Service
 class ApplicationRouterService {
@@ -29,9 +29,10 @@ class ApplicationRouterService {
   }
 
   /// Add a List of Route Configurations
-  void addRouteConfigurations(
-      {required List<ApplicationRoutes> routeConfigurations}) {
-    for (var routeConfig in routeConfigurations) {
+  void addRouteConfigurations({
+    required List<ApplicationRoutes> routeConfigurations,
+  }) {
+    for (final routeConfig in routeConfigurations) {
       addRoutes(routes: routeConfig.routes());
     }
   }
