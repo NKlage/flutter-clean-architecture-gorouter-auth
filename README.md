@@ -17,5 +17,5 @@ To use the sample implementation, you need to configure your Appwrite project in
 ## Nice to know
 
 - [Appwrite](https://appwrite.io)
-- [Mason](https://https://brickhub.dev/)
+- [Mason](https://brickhub.dev/)
 - [Mason Brick nk_riverpod_feature](https://brickhub.dev/bricks/nk_riverpod_feature)
