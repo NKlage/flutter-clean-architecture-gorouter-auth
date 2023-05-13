@@ -64,6 +64,7 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<void> signOut({bool allSessions = false}) async {
+    // ignore: unused_local_variable
     dynamic result; // validate the result in a real world project
     try {
       if (allSessions) {

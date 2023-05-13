@@ -7,7 +7,7 @@ import '../presentation/login.page.dart';
 /// Routes for the auth Feature
 class AuthRoutes implements ApplicationRoutes {
   @override
-  List<GoRoute> routes() => [
+  List<GoRoute> get routes => [
         GoRoute(
           path: '/login',
           builder: (BuildContext context, GoRouterState state) {

@@ -7,7 +7,7 @@ import '../presentation.dart';
 /// Routes for the auth Feature
 class DashboardRoutes implements ApplicationRoutes {
   @override
-  List<GoRoute> routes() => [
+  List<GoRoute> get routes => [
         GoRoute(
           path: '/dashboard',
           builder: (BuildContext context, GoRouterState state) {

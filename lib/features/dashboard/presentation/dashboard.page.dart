@@ -21,9 +21,7 @@ class DashboardPage extends ConsumerWidget {
             ),
             ElevatedButton(
               onPressed: () async {
-                await ref
-                    .read(AuthProviders.authRepository)
-                    .signOut(allSessions: true);
+                await ref.read(AuthProviders.authRepository).signOut();
               },
               child: const Text('Logout'),
             ),

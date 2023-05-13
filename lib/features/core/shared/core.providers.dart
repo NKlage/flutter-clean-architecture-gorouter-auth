@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../domain/services/application_router.service.dart';
+import '../domain.dart'
+    show ApplicationRouterService, ApplicationRouterServiceImpl;
 import 'appwrite_project.dart';
 
 /// Riverpod Providers from the Core Feature
@@ -12,12 +13,12 @@ class CoreProviders {
   // Presentation
 
   // Shared
-  /// Appwrite Project Client and Services
+  /// Appwrite Client and Services
   static final Provider<AppwriteProject> appwrite = Provider(
     (ref) => AppwriteProject(),
   );
 
   /// Application Router Service
   static final Provider<ApplicationRouterService> appRouterService =
-      Provider((ref) => ApplicationRouterService());
+      Provider((ref) => ApplicationRouterServiceImpl());
 }
