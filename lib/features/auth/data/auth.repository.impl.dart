@@ -43,7 +43,7 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Stream<User?> listen() => _userStreamController.stream;
+  Stream<User?> get authStateChanges => _userStreamController.stream;
 
   @override
   Future<void> loginWithEmailAndPassword({

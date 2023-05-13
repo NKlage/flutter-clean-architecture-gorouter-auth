@@ -16,7 +16,7 @@ abstract class AuthRepository {
   Future<void> signOut({bool allSessions = false});
 
   /// listen to the AuthRepository State
-  Stream<User?> listen();
+  Stream<User?> get authStateChanges;
 
   /// get the current user
   User? get currentUser;

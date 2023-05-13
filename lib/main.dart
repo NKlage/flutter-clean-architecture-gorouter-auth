@@ -19,8 +19,9 @@ class MainApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // for custom redirect
+    // for custom redirect example
     // final authRepository = ref.read(AuthProviders.authRepository);
+
     final authRedirectService = ref.read(AuthProviders.authRedirectService);
 
     // configure route service
@@ -38,14 +39,16 @@ class MainApp extends ConsumerWidget {
           ref.read(DashboardProviders.routes)
         ],
       )
-      // or add single Routes
+      // or add single route configuration
       // ..addRouteConfiguration(
       //   routeConfiguration: ref.read(AuthProviders.routes),
       // )
       // ..addRouteConfiguration(
       //   routeConfiguration: ref.read(DashboardProviders.routes),
       // )
+      // set listenable to notify go router
       ..setRefreshListenable(ref.watch(AuthProviders.authStateNotifier))
+      // set redirect
       ..setRedirect(authRedirectService.redirect);
     // or use custom implementation
     // ..setRedirect((_, GoRouterState state) async {

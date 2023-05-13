@@ -38,13 +38,13 @@ class AuthProviders {
   static final ChangeNotifierProvider<AuthStateNotifier> authStateNotifier =
       ChangeNotifierProvider<AuthStateNotifier>((ref) {
     final authRepo = ref.read(authRepository);
-    return AuthStateNotifier(userStream: authRepo.listen());
+    return AuthStateNotifier(userStream: authRepo.authStateChanges);
   });
 
   /// Authorization State
   static final StreamProvider<User?> authStateStream = StreamProvider((ref) {
     final authRepo = ref.read(authRepository);
-    return authRepo.listen();
+    return authRepo.authStateChanges;
   });
 
   // Shared
